@@ -14,7 +14,7 @@ class SaathiPipeline:
         self.sql_tool = SQLTool()
         self.rag_tool = RAGTool()
         self.voice_tool = VoiceTool()
-        self.model = "llama-4-scout" # Use a stable model available in the proxy
+        self.model = "meta-llama/llama-4-scout-17b-16e-instruct" # Use a stable model available in the proxy
 
     def process_query(self, user_input, is_audio=False):
         # 1. Handle Audio Input
