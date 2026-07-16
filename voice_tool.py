@@ -5,14 +5,14 @@ import tempfile
 
 class VoiceTool:
     def __init__(self, api_key=None):
-        self.client = OpenAI()
+        self.client = groq(api_key=os.environ.get("GROQ_API_KEY"))
 
     def stt(self, audio_file_path):
         try:
             with open(audio_file_path, "rb") as file:
                 transcription = self.client.audio.transcriptions.create(
                     file=(os.path.basename(audio_file_path), file.read()),
-                    model="whisper-large-v3",
+                    model="whisper-large-v3-turbo",
                 )
             return transcription.text
         except Exception as e:
