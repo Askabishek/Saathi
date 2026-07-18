@@ -1,5 +1,7 @@
+streamlit
 groq
 gtts
 chromadb
 sentence-transformers
-audiorecorder
+python-dotenv
+streamlit-audiorecorder
