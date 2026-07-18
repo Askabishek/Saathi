@@ -2,3 +2,4 @@ groq
 gtts
 chromadb
 sentence-transformers
+audiorecorder
