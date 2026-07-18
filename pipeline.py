@@ -6,7 +6,7 @@ from tools.rag_tool import RAGTool
 from tools.voice_tool import VoiceTool
 from dotenv import load_dotenv
 
-load_dotenv("saathi/.env")
+load_dotenv()
 
 class SaathiPipeline:
     def __init__(self):
