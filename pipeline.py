@@ -1,9 +1,9 @@
 import os
 import json
 from groq import Groq
-from saathi.tools.sql_tool import SQLTool
-from saathi.tools.rag_tool import RAGTool
-from saathi.tools.voice_tool import VoiceTool
+from tools.sql_tool import SQLTool
+from tools.rag_tool import RAGTool
+from tools.voice_tool import VoiceTool
 from dotenv import load_dotenv
 
 load_dotenv("saathi/.env")
