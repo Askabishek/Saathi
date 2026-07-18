@@ -1,6 +1,6 @@
 import os
 import json
-from openai import OpenAI
+from groq import Groq
 from saathi.tools.sql_tool import SQLTool
 from saathi.tools.rag_tool import RAGTool
 from saathi.tools.voice_tool import VoiceTool
@@ -10,7 +10,7 @@ load_dotenv("saathi/.env")
 
 class SaathiPipeline:
     def __init__(self):
-        self.client = OpenAI()
+        self.client = Groq(api_key=os.getenv("GROQ_API_KEY"))
         self.sql_tool = SQLTool()
         self.rag_tool = RAGTool()
         self.voice_tool = VoiceTool()
