@@ -1,11 +1,11 @@
 import os
-from openai import OpenAI
+from groq import Groq
 from gtts import gTTS
 import tempfile
 
 class VoiceTool:
     def __init__(self, api_key=None):
-        self.client = groq(api_key=os.environ.get("GROQ_API_KEY"))
+        self.client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 
     def stt(self, audio_file_path):
         try:
