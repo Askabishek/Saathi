@@ -15,7 +15,21 @@ class SQLTool:
             return f"Error: {str(e)}"
 
     def get_schema(self):
-        return """
-        Table: crimes
-        Columns: id (INT), case_number (TEXT), date (TEXT), type (TEXT), location (TEXT), status (TEXT), description (TEXT)
-        """
+    return """
+    Table: crimes
+    Columns: 
+        report_number (TEXT),
+        date_reported (TEXT),
+        date_occurred (TEXT),
+        time_occurred (TEXT),
+        city (TEXT),
+        crime_code (INT),
+        crime_type (TEXT),
+        victim_age (INT),
+        victim_gender (TEXT),
+        weapon_used (TEXT),
+        crime_domain (TEXT),
+        police_deployed (INT),
+        case_closed (TEXT),
+        date_case_closed (TEXT)
+    """
