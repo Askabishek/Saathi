@@ -3,9 +3,10 @@ import os
 
 class SQLTool:
     def __init__(self):
-        base = os.path.dirname(os.path.abspath(__file__))
-        csv_path = os.path.join(base, '..', 'data', 'crime_data.csv')
-        self.df = pd.read_csv(csv_path)
+    base = os.path.dirname(os.path.abspath(__file__))
+    csv_path = os.path.join(base, '..', 'data', 'crime_data.csv')
+    print(f"Loading CSV from: {csv_path}")  # debug
+    self.df = pd.read_csv(csv_path)
         self.df.columns = [
             'report_number', 'date_reported', 'date_occurred',
             'time_occurred', 'city', 'crime_code', 'crime_type',
