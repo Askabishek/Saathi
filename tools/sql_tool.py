@@ -1,16 +1,23 @@
-import sqlite3
 import pandas as pd
+import os
 
 class SQLTool:
-    def __init__(self, db_path='data/crime_db.sqlite'):
-        self.db_path = db_path
+    def __init__(self):
+        base = os.path.dirname(os.path.abspath(__file__))
+        csv_path = os.path.join(base, '..', 'data', 'crime_data.csv')
+        self.df = pd.read_csv(csv_path)
+        self.df.columns = [
+            'report_number', 'date_reported', 'date_occurred',
+            'time_occurred', 'city', 'crime_code', 'crime_type',
+            'victim_age', 'victim_gender', 'weapon_used',
+            'crime_domain', 'police_deployed', 'case_closed',
+            'date_case_closed'
+        ]
 
     def execute_query(self, query):
         try:
-            conn = sqlite3.connect(self.db_path)
-            df = pd.read_sql_query(query, conn)
-            conn.close()
-            return df.to_dict(orient='records')
+            result = self.df.query(query)
+            return result.to_dict(orient='records')
         except Exception as e:
             return f"Error: {str(e)}"
 
