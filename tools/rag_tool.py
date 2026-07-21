@@ -1,5 +1,6 @@
 import chromadb
 from chromadb.utils import embedding_functions
+from groq import Groq
 import os
 
 class RAGTool:
