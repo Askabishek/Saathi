@@ -5,3 +5,6 @@ chromadb
 sentence-transformers
 python-dotenv
 streamlit-audiorecorder
+sentence-transformers
+torch
+torchvision
